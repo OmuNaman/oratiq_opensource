@@ -1,6 +1,6 @@
 # Oratiq - AI-Powered Audio Transcription
 
-Oratiq is a web application that transforms speech into text using advanced AI. It leverages the power of Google's Gemini API to provide accurate, fast, and multilingual transcriptions.
+Oratiq is a web application that transforms speech into text using advanced AI. It leverages the power of Google's Gemini API to provide accurate, fast, and multilingual transcriptions. This README provides instructions on how to set up and run the application locally for development and testing.
 
 ## Features
 
@@ -46,27 +46,30 @@ These instructions will help you set up the project on your local machine for de
 **Steps:**
 
 1. **Clone the Repository:**
+
     ```bash
-    git clone <repository-url> 
-    cd <repository-name>
+    git clone https://github.com/OmuNaman/oratiq_opensource.git
+    cd oratiq_opensource
     ```
 
 2. **Install Frontend Dependencies:**
+
     ```bash
-    cd <your-project-directory>
     npm install
     ```
 
 3. **Install Backend Dependencies:**
+
     ```bash
-    cd <your-project-directory>
-    npm install --prefix server
+    npm install express cors multer @google/generative-ai fs path
     ```
-    
+
 4. **Configure Environment Variables:**
-    *   Create a  `.env`  file in the  `server`  directory.
+
+    *   Create a  `.env`  file in the project's root directory.
     *   Add the following environment variables to your  `.env`  file:
-    ```bash
+
+        ```
         API_KEY=YOUR_GEMINI_API_KEY
         TELEGRAM_BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
         TELEGRAM_CHAT_ID=YOUR_TELEGRAM_CHAT_ID
@@ -75,19 +78,22 @@ These instructions will help you set up the project on your local machine for de
     *   Replace  `YOUR_GEMINI_API_KEY`,  `YOUR_TELEGRAM_BOT_TOKEN`, and  `YOUR_TELEGRAM_CHAT_ID`  with your actual API key and Telegram details.
 
 5. **Run the Backend Server:**
+
     ```bash
     node server.js
     ```
-    *   The server will start on port 5000 (or the port specified in your `server.js` file).
+
+    *   The server will start on port 5000 (or the port specified in your  `server.js`  file).
 
 6. **Run the Frontend:**
+
     *   Open a new terminal window or tab.
     *   Navigate to your project directory.
     *   Run:
 
-    ```bash
-    npm run dev
-    ```
+        ```bash
+        npm run dev
+        ```
 
     *   This will start the Vite development server, and your frontend application should open in your browser (usually at  `http://localhost:5173/`).
 
@@ -103,19 +109,19 @@ These instructions will help you set up the project on your local machine for de
 
 **Deployment:**
 
-*   **Frontend:** The frontend can be deployed to Netlify (as you have already done).
+*   **Frontend:** The frontend can be deployed to Netlify.
 *   **Backend:** The backend can be deployed to a cloud platform like Render, Heroku, AWS, or Google Cloud. You will need to set the environment variables on your hosting platform as well.
 
 **Troubleshooting:**
 
 *   **CORS Errors:** If you encounter Cross-Origin Resource Sharing (CORS) errors, make sure that your backend server is configured to allow requests from your frontend's origin (the Netlify URL).
-*   **File Upload Issues:** If file uploads are not working, double-check your `multer` configuration and make sure the `uploads` directory has the correct permissions.
+*   **File Upload Issues:** If file uploads are not working, double-check your  `multer`  configuration and make sure the  `uploads`  directory has the correct permissions.
 *   **API Key Errors:** Ensure that your Gemini API key is correct and that it's being used properly in your backend code.
 
 **Important Notes:**
 
-*   **Security:** Do not hardcode sensitive information like API keys directly into your frontend code. Use environment variables instead.
+*   **Security:** Do not hardcode sensitive information like API keys directly into your code. Use environment variables instead.
 *   **Error Handling:** Implement proper error handling in both your frontend and backend to provide a better user experience.
 *   **File Storage:** For production, consider using a cloud storage solution like AWS S3 or Google Cloud Storage instead of storing files on the server's file system.
 
-This detailed README should provide a comprehensive guide for anyone to understand and run your Oratiq project locally. Remember to replace placeholders with your actual values and adapt the instructions as needed.
+This detailed README should provide a comprehensive guide for anyone to understand, run, and potentially contribute to your Oratiq project. Remember to adapt the instructions and explanations as needed based on any further changes you make to the codebase.
